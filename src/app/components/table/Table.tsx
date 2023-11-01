@@ -1,14 +1,17 @@
 'use client'
-import styles from "./Table.module.sass"
+import styles from "./Table.module.scss"
 import Service from "@/app/service/Service";
 import React, {FunctionComponent, useEffect, useState} from "react";
 import {Coin} from "@/app/service/Types";
 import TableRow from "@/app/components/table/table-row/TableRow";
+import Loading from "@/app/components/loading/Loading";
+import Pagination from "@/app/components/table/pagination/Pagination";
 
 const Table: FunctionComponent<{}> = () => {
     const [coinsNumber, setCoinsNumber] = useState<number>(0)
     const [offset, setOffset] = useState<number>(0)
     const [objects, setObjects] = useState<Coin[]>([])
+    const [loading, setLoading] = useState<boolean>(true)
 
     const getCoinsNumber = async () => {
         Service.getCoinsNumber().then((data) => {
@@ -16,56 +19,59 @@ const Table: FunctionComponent<{}> = () => {
             console.log(coinsNumber)
         })
     }
-    // TODO вызывается 100500 раз
-    getCoinsNumber()
 
     const increaseOffset = () => {
         setOffset(offset + 40);
-        // todo не успевает примениться setOffset
-        getAssets()
+        setLoading(true)
     };
 
     const decreaseOffset = () => {
         setOffset(offset - 40);
-        // todo не успевает примениться setOffset
-        getAssets()
+        setLoading(true)
     }
 
-
     const getAssets = async () => {
-        console.log(offset)
         Service.getAssets(offset).then((data) => {
             setObjects(data)
-            console.log(objects)
         })
     }
 
     useEffect(() => {
-        getAssets()
+        getCoinsNumber()
     }, [])
 
+    useEffect(() => {
+        getAssets()
+    }, [offset])
+
+    useEffect(() => {
+        setLoading(false)
+    }, [objects])
+
     return <div className={styles.body}>
-        <table>
-            <thead>
-            <tr>
-                <th>#</th>
-                <th>Name</th>
-                <th>Price</th>
-                <th>24h%</th>
-                <th>Market Cap</th>
-            </tr>
-            </thead>
-            <tbody>
-            {
-                objects.map((rowContent: Coin, rowId: number) => <TableRow rowContent={rowContent} key={rowId}/>)
-            }
-            </tbody>
-        </table>
-        <div>
-            <button onClick={decreaseOffset} disabled={offset - 40 < 0}>prev</button>
-            <div>{offset}-{offset + 40 > coinsNumber ? coinsNumber : offset + 40}</div>
-            <button onClick={increaseOffset} disabled={offset + 40 > coinsNumber}>next</button>
-        </div>
+        {
+            loading ?
+                <Loading/>
+                :
+                <table className={styles.cpTable}>
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>24h%</th>
+                        <th>Market Cap</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {
+                        objects.map((rowContent: Coin, rowId: number) => <TableRow rowContent={rowContent} key={rowId}/>)
+                    }
+                    </tbody>
+                </table>
+        }
+        <Pagination onClickPrev={decreaseOffset} onClickNext={increaseOffset} offset={offset} coinsNumber={coinsNumber}/>
     </div>
 }
 
