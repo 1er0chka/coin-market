@@ -2,7 +2,7 @@
 import styles from "./Table.module.scss"
 import Service from "@/app/service/Service";
 import React, {FunctionComponent, useEffect, useState} from "react";
-import {Coin, Sort} from "@/app/service/Types";
+import {Coin} from "@/app/service/Types";
 import TableRow from "@/app/components/table/table-row/TableRow";
 import Loading from "@/app/components/loading/Loading";
 import Pagination from "@/app/components/table/pagination/Pagination";
@@ -35,7 +35,7 @@ const Table: FunctionComponent<{}> = () => {
 
     return <div className={styles.body}>
         <div className={styles.aboveTableArea}>
-            <div className={styles.title}>Today's Cryptocurrency Prices</div>
+            <div className={styles.title}>Today`s Cryptocurrency Prices</div>
             <Search onClick={search} searchInfo={searchInfo} setSearchInfo={setSearchInfo}/>
         </div>
         {
