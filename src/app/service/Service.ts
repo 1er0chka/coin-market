@@ -5,7 +5,9 @@ const Service = {
         try {
             const res: Response = await fetch('https://api.coincap.io/v2/assets?limit=40&offset=' + offset)
             const info: IResponse = await res.json()
-            return info.data
+            return info.data.filter((coin) => {
+                return (coin.marketCapUsd && parseFloat(coin.priceUsd) >= 0.01)
+            })
         } catch (e) {
             return []
         }
@@ -25,6 +27,18 @@ const Service = {
             }
         } catch (e) {
             return 0
+        }
+    },
+
+    async getSearchResult(searchRequest: string): Promise<Coin[]> {
+        try {
+            let res: Response = await fetch('https://api.coincap.io/v2/assets?limit=2000&search=' + searchRequest)
+            const info: IResponse = await res.json()
+            return info.data.filter((coin) => {
+                return (coin.marketCapUsd && parseFloat(coin.priceUsd) >= 0.01)
+            })
+        } catch (e) {
+            return []
         }
     }
 }

@@ -5,7 +5,6 @@ export default function Home() {
     return (
         <main>
             <div className={styles.content}>
-                <div className={styles.title}>Today's Cryptocurrency Prices</div>
                 <Table/>
             </div>
         </main>

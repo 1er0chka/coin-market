@@ -30,8 +30,24 @@
   }
 
   &:not(:first-child, :last-child) {
-    padding: 1vw 1vw 1vw 1vw;
+    padding: 0.8vw 1vw 0.8vw 1vw;
   }
+}
+
+.nameRow {
+  display: flex;
+  align-items: center;
+}
+
+.nameRow_logo {
+  width: 1.4vw;
+  margin-right: 1vw;
+}
+
+.nameRow_symbol {
+  margin-left: 0.8vw;
+  @include montserrat(1vw, 600);
+  color: rgba(59, 39, 21, 0.8);
 }
 
 .negativeSum {

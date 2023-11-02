@@ -6,12 +6,14 @@ import {Coin} from "@/app/service/Types";
 import TableRow from "@/app/components/table/table-row/TableRow";
 import Loading from "@/app/components/loading/Loading";
 import Pagination from "@/app/components/table/pagination/Pagination";
+import Search from "@/app/components/table/search/Search";
 
 const Table: FunctionComponent<{}> = () => {
     const [coinsNumber, setCoinsNumber] = useState<number>(0)
     const [offset, setOffset] = useState<number>(0)
     const [objects, setObjects] = useState<Coin[]>([])
     const [loading, setLoading] = useState<boolean>(true)
+    const [searchInfo, setSearchInfo] = useState<string>("")
 
     const getCoinsNumber = async () => {
         Service.getCoinsNumber().then((data) => {
@@ -36,6 +38,12 @@ const Table: FunctionComponent<{}> = () => {
         })
     }
 
+    const search = async () => {
+        Service.getSearchResult(searchInfo).then((data) => {
+            setObjects(data)
+        })
+    }
+
     useEffect(() => {
         getCoinsNumber()
     }, [])
@@ -45,33 +53,43 @@ const Table: FunctionComponent<{}> = () => {
     }, [offset])
 
     useEffect(() => {
-        setLoading(false)
+        setTimeout(() => {
+            setLoading(false)
+        }, 500)
     }, [objects])
 
     return <div className={styles.body}>
+        <div className={styles.aboveTableArea}>
+            <div className={styles.title}>Today's Cryptocurrency Prices</div>
+            <Search onClick={search} searchInfo={searchInfo} setSearchInfo={setSearchInfo}/>
+        </div>
         {
             loading ?
                 <Loading/>
                 :
-                <table className={styles.cpTable}>
-                    <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>Name</th>
-                        <th>Price</th>
-                        <th>24h%</th>
-                        <th>Market Cap</th>
-                        <th></th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    {
-                        objects.map((rowContent: Coin, rowId: number) => <TableRow rowContent={rowContent} key={rowId}/>)
-                    }
-                    </tbody>
-                </table>
+                <div>
+                    <table className={styles.cpTable}>
+                        <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Name</th>
+                            <th>Price</th>
+                            <th>24h%</th>
+                            <th>Market Cap</th>
+                            <th></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {
+                            objects.map((rowContent: Coin, rowId: number) => <TableRow rowContent={rowContent}
+                                                                                       key={rowId}/>)
+                        }
+                        </tbody>
+                    </table>
+                </div>
         }
-        <Pagination onClickPrev={decreaseOffset} onClickNext={increaseOffset} offset={offset} coinsNumber={coinsNumber}/>
+        <Pagination onClickPrev={decreaseOffset} onClickNext={increaseOffset} offset={offset}
+                    coinsNumber={coinsNumber}/>
     </div>
 }
 
