@@ -23,7 +23,7 @@ const Service = {
                 if (data.length == 0) {
                     return lastRank
                 }
-                lastRank = +data.at(-1).rank
+                lastRank = +data[data.length - 1].rank
             }
         } catch (e) {
             return 0
