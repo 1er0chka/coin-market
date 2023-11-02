@@ -1,0 +1,8 @@
+@import "../../../fonts";
+
+.tableHeader {
+  @include montserrat(1.1vw, 700);
+  color: wheat;
+  text-align: center;
+  background-color: rgba(59, 39, 21, 0.7);
+}

@@ -1,0 +1,37 @@
+.body {
+  display: flex;
+  gap: 0.5vw; //Расстояние между элементами
+  width: 100%;
+  justify-content: center;
+  margin-top: 3vw;
+  margin-bottom: 5vw;
+  div {
+    width: 0.6vw;
+    height: 0.6vw;
+    border-radius: 0.3vw;
+    &:nth-child(1) {
+      background-color: orange;
+      animation: animate infinite 0.8s ease-in;
+    }
+    &:nth-child(2) {
+      background-color: #d53d06;
+      animation: animate infinite 0.8s ease-in 0.3s;
+    }
+    &:nth-child(3) {
+      background-color: #e37201;
+      animation: animate infinite 0.8s ease-in 0.6s;
+    }
+  }
+}
+
+@keyframes animate {
+  from {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(1vw);
+  }
+  to {
+    transform: translateY(0);
+  }
+}

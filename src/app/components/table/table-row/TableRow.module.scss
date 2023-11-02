@@ -21,16 +21,19 @@
   text-align: right;
 
   &:first-child {
+    width: 2vw;
     text-align: center;
     padding: 0 0.3vw 0 0.3vw;
   }
 
-  &:nth-child(2) {
-    text-align: left;
-  }
-
   &:not(:first-child, :last-child) {
     padding: 0.8vw 1vw 0.8vw 1vw;
+    width: 12.5vw;
+  }
+
+  &:nth-child(2) {
+    text-align: left;
+    width: 20vw;
   }
 }
 
