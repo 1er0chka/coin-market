@@ -13,3 +13,5 @@ export interface Coin {
 export interface IResponse {
     data: Coin[]
 }
+
+export type Sort = 'rank'|'priceUsd'|'changePercent24Hr'|'marketCapUsd'
