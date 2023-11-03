@@ -1,0 +1,14 @@
+.bar {
+  height: 0.7vw;
+  width: 100%;
+  position: relative;
+  background-color: rgba(59,39,21,0.15);
+}
+
+.fill {
+  height: 100%;
+  background-color: rgba(240, 101, 67, 0.8);
+  position: absolute;
+  left: 0;
+  top: 0;
+}

@@ -8,6 +8,7 @@ import Loading from "@/app/components/loading/Loading";
 import Pagination from "@/app/components/table/pagination/Pagination";
 import Search from "@/app/components/table/search/Search";
 import TableHeader from "@/app/components/table/table-header/TableHeader";
+import Link from "next/link";
 
 const Table: FunctionComponent<{}> = () => {
     const [objects, setObjects] = useState<Coin[]>([])

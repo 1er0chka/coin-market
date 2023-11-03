@@ -1,8 +1,6 @@
-
-
 body {
     margin: 0;
-    background: rgb(240, 101, 67, 0.8);
+    background: rgba(240, 101, 67, 0.8);
     background: linear-gradient(317deg, rgba(240, 101, 67, 0.6) 0%, rgba(255, 190, 61, 0.7) 74%);
     background-attachment: fixed;
 }

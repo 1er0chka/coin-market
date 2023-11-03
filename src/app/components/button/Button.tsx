@@ -1,6 +1,6 @@
 'use client'
 import React, {FunctionComponent, MouseEventHandler} from 'react';
-import styles from "./PageButton.module.scss"
+import styles from "./Button.module.scss"
 
 interface IButtonParams {
     onClick: MouseEventHandler<HTMLButtonElement>
@@ -8,11 +8,11 @@ interface IButtonParams {
     text: string
 }
 
-const PageButton: FunctionComponent<IButtonParams> = ({onClick, disabled, text}) => {
+const Button: FunctionComponent<IButtonParams> = ({onClick, disabled, text}) => {
 
     return (
         <button className={styles.button} onClick={onClick} disabled={disabled}>{text}</button>
     );
 }
 
-export default PageButton;
+export default Button;

@@ -1,6 +1,6 @@
 import React, {FunctionComponent, MouseEventHandler, useEffect, useState} from 'react';
 import styles from "./Pagination.module.scss"
-import PageButton from "@/app/components/table/pagination/page-button/PageButton";
+import Button from "@/app/components/button/Button";
 import Service from "@/app/service/Service";
 
 interface IPaginationParams {
@@ -35,9 +35,9 @@ const Pagination: FunctionComponent<IPaginationParams> = ({refreshTable}) => {
 
     return (
         <div className={styles.pagination}>
-            <PageButton onClick={decreaseOffset} disabled={offset - 40 < 0} text={"<"}/>
+            <Button onClick={decreaseOffset} disabled={offset - 40 < 0} text={"<"}/>
             <div>{offset} - {offset + 40 > coinsNumber ? coinsNumber : offset + 40}</div>
-            <PageButton onClick={increaseOffset} disabled={offset + 40 > coinsNumber} text={">"}></PageButton>
+            <Button onClick={increaseOffset} disabled={offset + 40 > coinsNumber} text={">"}></Button>
         </div>
     );
 };

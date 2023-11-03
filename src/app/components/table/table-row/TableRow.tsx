@@ -2,6 +2,7 @@
 import React, {FunctionComponent} from 'react';
 import {Coin} from "@/app/service/Types";
 import styles from "./TableRow.module.scss"
+import Link from "next/link";
 
 const TableRow: FunctionComponent<{ rowContent: Coin, key: number }> = ({rowContent, key}) => {
     const formatNumber = (number: number) => {
@@ -26,9 +27,9 @@ const TableRow: FunctionComponent<{ rowContent: Coin, key: number }> = ({rowCont
             <td className={parseFloat(rowContent.changePercent24Hr) < 0 ? styles.negativeSum : styles.positiveSum}>{parseFloat(rowContent.changePercent24Hr).toFixed(2)}%</td>
             <td>{formatNumber(parseFloat(rowContent.marketCapUsd))}</td>
             <td>
-                <div className={styles.addButton}>
+                <Link className={styles.addButton}  href="/coin/[currency_coin]" as={"/coin/" + rowContent.name.toLowerCase()}>
                     <img src={"resources/images/add-cart.png"}/>
-                </div>
+                </Link>
             </td>
         </tr>
     );

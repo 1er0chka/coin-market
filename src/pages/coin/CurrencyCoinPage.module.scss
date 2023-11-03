@@ -1,0 +1,44 @@
+@import "src/app/fonts";
+
+.content {
+  margin: 3vw 10vw 3vw 10vw;
+}
+
+.title {
+  display: flex;
+  margin-bottom: 1vw;
+  margin-left: 1vw;
+}
+
+.coinRank {
+  @include montserrat(2vw, 500);
+}
+
+.coinImage {
+  width: 2.1vw;
+  height: 2.1vw;
+  margin: 0 0.6vw 0 1vw;
+}
+
+.coinName {
+  @include montserrat(2vw, 600);
+}
+
+.coinSymbol {
+  @include montserrat(1.1vw, 700);
+  color: rgba(59, 39, 21, 0.8);
+  margin-left: 0.5vw;
+}
+
+.info {
+  display: flex;
+}
+
+.infoLeft {
+  width: 54vw;
+}
+
+.infoRight {
+  width: 20vw;
+  margin-left: 5vw;
+}
