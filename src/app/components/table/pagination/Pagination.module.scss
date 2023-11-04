@@ -5,12 +5,11 @@
   width: 100%;
   justify-content: center;
   align-items: center;
-
   margin: 1vw 0 1vw 0;
 }
 
 .pagination div {
+  @include montserrat(1vw, 500);
   color: #3B2715;
   margin: 0 0.6vw 0 0.6vw;
-  @include montserrat(1vw, 500)
 }

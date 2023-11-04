@@ -1,0 +1,23 @@
+@import "src/app/styles/fonts";
+
+.addButton {
+  margin-top: 2vw;
+  height: 2vw;
+  @include montserrat(1vw, 700);
+  background-color: rgba(255, 255, 255, 0.4);
+  border: 0.1vw solid rgba(59, 39, 21, 0.3);
+  border-radius: 0.1vw;
+  padding: 0.2vw 0.8vw 0.2vw 0.8vw;
+  width: 100%;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+  }
+
+  &:disabled {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: rgba(59, 39, 21, 0.7);
+    cursor: auto;
+  }
+}

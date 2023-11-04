@@ -10,6 +10,7 @@ import {GetStaticPaths, GetStaticProps} from "next";
 import {formatNumber} from "@/app/service/Formats";
 import Link from "next/link";
 import Loading from "@/app/components/loading/Loading";
+import ButtonAddToBasket from "@/app/components/button-add-to-basket/ButtonAddToBasket";
 
 type CurrencyCoinProps = {
     slug: string;
@@ -57,24 +58,27 @@ const CurrencyCoinPage = ({slug}: CurrencyCoinProps) => {
                             </div>
                             <div className={styles.info}>
                                 <div className={styles.infoLeft}>
-                                    <CoinChart/>
-                                    <Link className={styles.back} href={'/'}> ← Назад</Link>
+                                    <CoinChart coinId={coin?.id as string}/>
+                                    <Link className={styles.back} href={'/'}> ← Back to table</Link>
                                 </div>
                                 <div className={styles.infoRight}>
                                     <div className={styles.coinPrice}>
                                         {formatNumber(parseFloat(coin?.priceUsd as string))}
                                     </div>
-                                    <CoinData primaryInfo={'Market Cap'} secondaryInfo={formatNumber(parseFloat(coin?.marketCapUsd as string))}/>
-                                    <CoinData primaryInfo={'Supply'} secondaryInfo={formatNumber(parseFloat(coin?.supply as string))}/>
-                                    <CoinData primaryInfo={'Max Supply'} secondaryInfo={formatNumber(parseFloat(coin?.maxSupply as string))}/>
-                                    <button>добавить в корзину типо</button>
+                                    <CoinData primaryInfo={'Market Cap'}
+                                              secondaryInfo={formatNumber(parseFloat(coin?.marketCapUsd as string))}/>
+                                    <CoinData primaryInfo={'Supply'}
+                                              secondaryInfo={formatNumber(parseFloat(coin?.supply as string))}/>
+                                    <CoinData primaryInfo={'Max Supply'}
+                                              secondaryInfo={formatNumber(parseFloat(coin?.maxSupply as string))}/>
+                                    <ButtonAddToBasket/>
                                 </div>
                             </div>
                         </div>
                         :
                         <div className={styles.content}>
                             <div className={styles.error}>Page doesn`t exist</div>
-                            <Link className={styles.back} href={'/'}> ← Назад</Link>
+                            <Link className={styles.back} href={'/'}> ← Back to table</Link>
                         </div>
                     }
                 </div>

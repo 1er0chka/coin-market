@@ -1,4 +1,4 @@
-import {Coin, IAssetsResponse, ICoinResponse} from "@/app/service/Types";
+import {Coin, History, IAssetsResponse, ICoinResponse, IHistoryResponse} from "@/app/service/Types";
 
 const Service = {
     async getAssets(offset: number): Promise<Coin[]> {
@@ -17,16 +17,23 @@ const Service = {
         try {
             const res: Response = await fetch('https://api.coincap.io/v2/assets/' + id)
             if (res.status == 200) {
-                console.log('200')
                 const info: ICoinResponse = await res.json()
                 return info.data
             } else {
-                console.log('404')
                 return undefined
             }
         } catch (e) {
-            console.log('err0r')
             return undefined
+        }
+    },
+
+    async getHistoryById(id: string, interval: string): Promise<History[]> {
+        try {
+            const res: Response = await fetch('https://api.coincap.io/v2/assets/' + id + '/history?interval=' + interval)
+            const info: IHistoryResponse = await res.json()
+            return info.data
+        } catch (e) {
+            return []
         }
     },
 

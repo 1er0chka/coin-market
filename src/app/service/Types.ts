@@ -18,4 +18,15 @@ export interface ICoinResponse {
     data: Coin
 }
 
-export type Sort = 'rank'|'priceUsd'|'changePercent24Hr'|'marketCapUsd'
+export interface History {
+    priceUsd: string
+    time: string
+    circulatingSupply: string
+    date: string
+}
+
+export interface IHistoryResponse {
+    data: History[]
+}
+
+export type Sort = 'rank' | 'priceUsd' | 'changePercent24Hr' | 'marketCapUsd'

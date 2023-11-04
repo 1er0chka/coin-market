@@ -14,7 +14,6 @@ const Pagination: FunctionComponent<IPaginationParams> = ({refreshTable}) => {
     const getCoinsNumber = async () => {
         Service.getCoinsNumber().then((data) => {
             setCoinsNumber(data)
-            console.log(coinsNumber)
         })
     }
     const increaseOffset = () => {

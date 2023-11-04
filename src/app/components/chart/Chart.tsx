@@ -11,6 +11,7 @@ import {
     Filler,
     Tooltip
 } from "chart.js";
+import {FunctionComponent} from "react";
 
 ChartJs.register(
     LineElement,
@@ -23,12 +24,12 @@ ChartJs.register(
     crosshair
 );
 
-const Chart = () => {
-    const time = [50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150]
-    const price = [7, 8, 8, 9, 9, 9, 10, 11, 14, 14, 15]
-    const minPrice = 5
-    const maxPrice = 17
+interface ICartParams {
+    time: string[]
+    price: number[]
+}
 
+const Chart:FunctionComponent<ICartParams> = ({time, price}) => {
     const data = {
         labels: time,
         datasets: [
@@ -46,10 +47,9 @@ const Chart = () => {
         responsive: true,
         maintainAspectRatio: false,
         legend: {display: false},
-        scales: {
-            y: {
-                min: minPrice,
-                max: maxPrice
+        elements: {
+            point: {
+                radius: 0
             }
         },
         plugins: {
