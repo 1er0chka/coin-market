@@ -1,41 +1,102 @@
 import {useRouter} from "next/router";
-import dynamic from "next/dynamic";
 import styles from './CurrencyCoinPage.module.scss'
-import '../../app/globals.css'
-import Button from "@/app/components/button/Button";
-import {useEffect, useState} from "react";
+import '../../app/styles/globals.css'
 import CoinChart from "@/pages/coin/coin-chart/CoinChart";
-import ProgressBar from "@/app/components/progressBar/ProgressBar";
+import CoinData from "@/pages/coin/data/CoinData";
+import {useEffect, useState} from "react";
+import {Coin} from "@/app/service/Types";
+import Service from "@/app/service/Service";
+import {GetStaticPaths, GetStaticProps} from "next";
+import {formatNumber} from "@/app/service/Formats";
+import Link from "next/link";
+import Loading from "@/app/components/loading/Loading";
 
-const CurrencyCoinPage = () => {
+type CurrencyCoinProps = {
+    slug: string;
+}
+
+const CurrencyCoinPage = ({slug}: CurrencyCoinProps) => {
     const router = useRouter();
-    const {currency_coin} = router.query;
+    const [coin, setCoin] = useState<Coin | undefined>(undefined)
+    const [isExists, setIsExists] = useState<boolean>(true)
+    const [loading, setLoading] = useState<boolean>(true)
 
-    const coin = typeof router.query.currency_coin === 'string'
-        ? router.query.currency_coin
-        : undefined;
+    useEffect(() => {
+        const getAssets = async () => {
+            if (typeof router.query.currency_coin === "string") {
+                Service.getAssetsById(router.query.currency_coin).then((data) => {
+                    setIsExists(typeof data !== "undefined")
+                    setCoin(data);
+                });
+            }
+        }
+        if (slug) {
+            getAssets()
+        }
+    }, [slug])
 
+    useEffect(() => {
+        setTimeout(() => {
+            setLoading(false)
+        }, 500)
+    }, [isExists])
 
     return (
-        <div className={styles.content}>
-            <div className={styles.title}>
-                <div className={styles.coinRank}>1.</div>
-                <img src={"https://assets.coincap.io/assets/icons/btc@2x.png"} className={styles.coinImage}></img>
-                <div className={styles.coinName}>{coin}</div>
-                <div className={styles.coinSymbol}>BTC</div>
-            </div>
-            <div className={styles.info}>
-                <div className={styles.infoLeft}>
-                    <CoinChart/>
+        <div>
+            {loading ? <Loading/> :
+                <div>
+                    {isExists ?
+                        <div className={styles.content}>
+                            <div className={styles.title}>
+                                <div className={styles.coinRank}>{coin?.rank}.</div>
+                                <img
+                                    src={"https://assets.coincap.io/assets/icons/" + coin?.symbol.toLowerCase() + "@2x.png"}
+                                    className={styles.coinImage}></img>
+                                <div className={styles.coinName}>{coin?.name}</div>
+                                <div className={styles.coinSymbol}>{coin?.symbol}</div>
+                            </div>
+                            <div className={styles.info}>
+                                <div className={styles.infoLeft}>
+                                    <CoinChart/>
+                                    <Link className={styles.back} href={'/'}> ← Назад</Link>
+                                </div>
+                                <div className={styles.infoRight}>
+                                    <div className={styles.coinPrice}>
+                                        {formatNumber(parseFloat(coin?.priceUsd as string))}
+                                    </div>
+                                    <CoinData primaryInfo={'Market Cap'} secondaryInfo={formatNumber(parseFloat(coin?.marketCapUsd as string))}/>
+                                    <CoinData primaryInfo={'Supply'} secondaryInfo={formatNumber(parseFloat(coin?.supply as string))}/>
+                                    <CoinData primaryInfo={'Max Supply'} secondaryInfo={formatNumber(parseFloat(coin?.maxSupply as string))}/>
+                                    <button>добавить в корзину типо</button>
+                                </div>
+                            </div>
+                        </div>
+                        :
+                        <div className={styles.content}>
+                            <div className={styles.error}>Page doesn`t exist</div>
+                            <Link className={styles.back} href={'/'}> ← Назад</Link>
+                        </div>
+                    }
                 </div>
-                <div className={styles.infoRight}>
-                    <div className={styles.coinPrice}>1,808.23 $</div>
-                    <ProgressBar percentage={78.21}/>
-                </div>
-            </div>
-
+            }
         </div>
     );
 }
 
 export default CurrencyCoinPage
+
+export const getStaticPaths: GetStaticPaths = async () => {
+    return {
+        paths: [],
+        fallback: true
+    };
+}
+
+export const getStaticProps: GetStaticProps<CurrencyCoinProps> = async (context) => {
+    const slug = context.params!.currency_coin as string;
+    return {
+        props: {
+            slug
+        }
+    }
+}

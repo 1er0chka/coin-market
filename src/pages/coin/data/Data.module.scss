@@ -1,0 +1,16 @@
+@import "src/app/styles/fonts";
+
+.title {
+  display: flex;
+  margin-bottom: 0.2vw;
+  margin-top: 1vw;
+}
+
+.primaryInfo {
+  @include montserrat(1vw, 700);
+}
+
+.secondaryInfo {
+  @include montserrat(1vw, 600);
+  margin: 0 0 0 auto;
+}

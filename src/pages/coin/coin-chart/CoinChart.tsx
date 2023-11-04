@@ -14,7 +14,7 @@ const CoinChart = () => {
     }, [mode])
 
     return (
-        <div>
+        <div className={styles.body}>
             <div className={styles.modeList}>
                 <Button onClick={() => setMode('24H')} disabled={mode == '24H'} text={'24H'}/>
                 <Button onClick={() => setMode('7D')} disabled={mode == '7D'} text={'7D'}/>

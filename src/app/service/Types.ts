@@ -4,14 +4,18 @@ export interface Coin {
     rank: string
     symbol: string
     supply: string
-    msxSupply: string
+    maxSupply: string
     priceUsd: string
     changePercent24Hr: string
     marketCapUsd: string
 }
 
-export interface IResponse {
+export interface IAssetsResponse {
     data: Coin[]
+}
+
+export interface ICoinResponse {
+    data: Coin
 }
 
 export type Sort = 'rank'|'priceUsd'|'changePercent24Hr'|'marketCapUsd'
