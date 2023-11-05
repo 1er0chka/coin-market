@@ -1,12 +1,14 @@
 'use client'
-import React, {FunctionComponent} from 'react';
+import React, {FunctionComponent, useContext} from 'react';
 import {Coin} from "@/app/service/Types";
 import styles from "./TableRow.module.scss"
 import {formatNumber} from "@/app/service/Formats";
 import {useRouter} from "next/router";
+import {ModalCoinContext} from "@/app/provider/ModalCoinContext";
 
 const TableRow: FunctionComponent<{ rowContent: Coin, key: number }> = ({rowContent, key}) => {
     const router = useRouter();
+    const {setCoin} = useContext(ModalCoinContext)
     const handleClick = () => {
         router.push("/coin/[currency_coin]", "/coin/" + rowContent.id.toLowerCase());
     }
@@ -27,7 +29,7 @@ const TableRow: FunctionComponent<{ rowContent: Coin, key: number }> = ({rowCont
                 className={parseFloat(rowContent.changePercent24Hr) < 0 ? styles.negativeSum : styles.positiveSum}>{parseFloat(rowContent.changePercent24Hr).toFixed(2)}%
             </td>
             <td onClick={handleClick}>{formatNumber(parseFloat(rowContent.marketCapUsd))}</td>
-            <td>
+            <td onClick={() => setCoin(rowContent)}>
                 <div className={styles.addButton}>
                     <img src={"resources/images/add-cart.png"}/>
                 </div>

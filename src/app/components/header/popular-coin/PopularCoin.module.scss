@@ -1,0 +1,32 @@
+@import "src/app/styles/fonts";
+
+.body {
+  text-align: right;
+  margin-left: 6vw;
+}
+
+.title {
+  display: flex;
+  margin-bottom: 0.3vw;
+  margin-left: 1vw;
+}
+
+.coinImage {
+  width: 1.1vw;
+  height: 1.1vw;
+  margin: 0 0.3vw 0 0;
+}
+
+.coinName {
+  @include montserrat(1vw, 500);
+}
+
+.coinSymbol {
+  @include montserrat(0.6vw, 600);
+  color: rgba(59, 39, 21, 0.8);
+  margin-left: 0.2vw;
+}
+
+.coinPrice {
+  @include montserrat(1vw, 600);
+}

@@ -1,0 +1,74 @@
+@import "src/app/styles/fonts";
+
+.modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(59, 39, 21, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content {
+  background-color: #e3b671;
+  padding: 1vw 2vw 1vw 2vw;
+  border-radius: 0.3vw;
+  border: 0.1vw solid rgba(59, 39, 21, 0.3);
+}
+
+.number {
+  display: flex;
+  margin-bottom: 2vw;
+}
+
+.info {
+  text-align: left;
+  margin-right: 2vw;
+}
+
+.coinName {
+  @include montserrat(1.2vw, 700);
+}
+
+.coinPrice {
+  @include montserrat(1vw, 500);
+}
+
+.input, .incorrectInput {
+  margin: 0 0 0 auto;
+  display: flex;
+  border: none;
+
+  input {
+    @include montserrat(1vw, 500);
+    background-color: rgba(255, 255, 255, 0.4);
+    padding: 0.2vw 1vw 0.2vw 1vw;
+    border: none;
+    border-radius: 0.1vw;
+
+    &:active, &:focus, &:hover {
+      border: none;
+      outline: none;
+      background-color: rgba(255, 255, 255, 0.6);
+      color: rgba(59, 39, 21, 0.7);
+    }
+  }
+}
+
+.incorrectInput {
+  border: 0.1vw red solid;
+}
+
+.amount {
+  @include montserrat(1vw, 700);
+  text-align: right;
+}
+
+.buttons {
+  margin-top: 1.4vw;
+  display: flex;
+  justify-content: space-between;
+}

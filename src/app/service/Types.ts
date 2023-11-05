@@ -29,4 +29,10 @@ export interface IHistoryResponse {
     data: History[]
 }
 
+export interface Portfolio {
+    id: string
+    number: number
+    oldPrice: number
+}
+
 export type Sort = 'rank' | 'priceUsd' | 'changePercent24Hr' | 'marketCapUsd'

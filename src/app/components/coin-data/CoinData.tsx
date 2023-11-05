@@ -1,5 +1,5 @@
 import React, {FunctionComponent} from 'react';
-import styles from './Data.module.scss'
+import styles from './CoinData.module.scss'
 
 interface ICoinData {
     primaryInfo: string
