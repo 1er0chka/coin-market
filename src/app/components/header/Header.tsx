@@ -73,7 +73,12 @@ const Header = () => {
             <div className={styles.portfolio} onClick={() => setVisible(true)}>
                 <div className={styles.portfolioPrice}>
                     <div className={styles.price}>{formatNumber(portfolioSum)}</div>
-                    <div className={styles.difference}>{formatNumber(portfolioDif)} ({(portfolioDif / portfolioSum * 100).toFixed(2)}%)</div>
+                    {
+                        portfolioDif != 0 ?
+                            <div className={styles.difference}>{formatNumber(portfolioDif)} ({(portfolioDif / portfolioSum * 100).toFixed(2)}%)</div>
+                            :
+                            <div className={styles.difference}>0 (0%)</div>
+                    }
                 </div>
                 <img src={"/resources/images/coin.png"}/>
             </div>
