@@ -7,7 +7,6 @@ import React, {
     FunctionComponent,
     PropsWithChildren
 } from 'react';
-import {Coin} from "@/app/service/Types";
 
 type ModalContextType = {
     isVisible: boolean

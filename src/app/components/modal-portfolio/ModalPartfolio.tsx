@@ -3,10 +3,7 @@ import styles from './ModalPortfolio.module.scss';
 import Button from "@/app/components/button/Button";
 import {ModalPortfolioContext} from "@/app/provider/ModalPortfolioContext";
 import PortfolioCoin from "@/app/components/modal-portfolio/portfolio-coin/PortfolioCoin";
-import {Coin, Portfolio} from "@/app/service/Types";
-import {json} from "stream/consumers";
-import {formatNumber} from "@/app/service/Formats";
-import Service from "@/app/service/Service";
+import {Portfolio} from "@/app/service/Types";
 
 const ModalPortfolio: FunctionComponent = () => {
     const modalContext = useContext(ModalPortfolioContext);
@@ -44,8 +41,9 @@ const ModalPortfolio: FunctionComponent = () => {
             <div className={styles.content}>
                 <div className={styles.title}> Portfolio</div>
                 {
-                    portfolio.map((coin, id) => <PortfolioCoin key={coin.id} coin={coin}/>)
+                    portfolio.map((coin) => <PortfolioCoin key={coin.id} coin={coin}/>)
                 }
+                <Button onClick={()=>setVisible(false)} disabled={false} text={'Close'}/>
             </div>
         </div>
     ) : null;

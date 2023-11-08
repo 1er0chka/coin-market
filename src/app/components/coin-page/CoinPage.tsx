@@ -23,8 +23,8 @@ const CoinPage:FunctionComponent<{slug: CurrencyCoinProps}> = ({slug}) => {
         const getAssets = async () => {
             if (typeof router.query.currency_coin === "string") {
                 Service.getAssetsById(router.query.currency_coin).then((data) => {
-                    setIsExists(typeof data !== "undefined")
                     setCurrencyCoin(data);
+                    setIsExists(typeof data !== "undefined")
                 });
             }
         }

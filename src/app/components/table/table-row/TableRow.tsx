@@ -5,8 +5,9 @@ import styles from "./TableRow.module.scss"
 import {formatNumber} from "@/app/service/Formats";
 import {useRouter} from "next/router";
 import {ModalCoinContext} from "@/app/provider/ModalCoinContext";
+import Image from "next/image";
 
-const TableRow: FunctionComponent<{ rowContent: Coin, key: number }> = ({rowContent, key}) => {
+const TableRow: FunctionComponent<{ rowContent: Coin}> = ({rowContent}) => {
     const router = useRouter();
     const {setCoin} = useContext(ModalCoinContext)
     const handleClick = () => {
@@ -18,8 +19,10 @@ const TableRow: FunctionComponent<{ rowContent: Coin, key: number }> = ({rowCont
             <td onClick={handleClick}>{rowContent.rank}</td>
             <td onClick={handleClick}>
                 <div className={styles.nameRow}>
-                    <img className={styles.nameRow_logo}
-                         src={'https://assets.coincap.io/assets/icons/' + rowContent.symbol.toLowerCase() + '@2x.png'}/>
+                    <div className={styles.nameRow_logo}>
+                        <Image width={140} height={140} layout={"responsive"}
+                               src={'https://assets.coincap.io/assets/icons/' + rowContent.symbol.toLowerCase() + '@2x.png'} alt={''}/>
+                    </div>
                     <div>{rowContent.name}</div>
                     <div className={styles.nameRow_symbol}>{rowContent.symbol}</div>
                 </div>
@@ -31,7 +34,9 @@ const TableRow: FunctionComponent<{ rowContent: Coin, key: number }> = ({rowCont
             <td onClick={handleClick}>{formatNumber(parseFloat(rowContent.marketCapUsd))}</td>
             <td onClick={() => setCoin(rowContent)}>
                 <div className={styles.addButton}>
-                    <img src={"resources/images/add-cart.png"}/>
+                    <div className={styles.image}>
+                        <Image width={125} height={125} layout={"responsive"} src={"/resources/images/add-cart.png"} alt={'Buy'}/>
+                    </div>
                 </div>
             </td>
         </tr>

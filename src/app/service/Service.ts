@@ -40,10 +40,11 @@ const Service = {
     async getCoinsNumber(): Promise<number> {
         let lastRank: number = 0
         try {
+            // eslint-disable-next-line no-constant-condition
             while (true) {
-                let res: Response = await fetch('https://api.coincap.io/v2/assets?limit=2000&offset=' + lastRank)
-                let info: IAssetsResponse = await res.json()
-                let data: Coin[] = info.data
+                const res: Response = await fetch('https://api.coincap.io/v2/assets?limit=2000&offset=' + lastRank)
+                const info: IAssetsResponse = await res.json()
+                const data: Coin[] = info.data
                 if (data.length == 0) {
                     return lastRank
                 }
@@ -56,7 +57,7 @@ const Service = {
 
     async getSearchResult(searchRequest: string): Promise<Coin[]> {
         try {
-            let res: Response = await fetch('https://api.coincap.io/v2/assets?limit=2000&search=' + searchRequest)
+            const res: Response = await fetch('https://api.coincap.io/v2/assets?limit=2000&search=' + searchRequest)
             const info: IAssetsResponse = await res.json()
             return info.data.filter((coin) => {
                 return (coin.marketCapUsd && parseFloat(coin.priceUsd) >= 0.01)

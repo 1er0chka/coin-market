@@ -38,7 +38,8 @@ const Chart:FunctionComponent<ICartParams> = ({time, price}) => {
                 data: price,
                 fill: "start",
                 backgroundColor: "rgba(240, 101, 67, 0.1)",
-                borderColor: "rgba(59,39,21,0.6)"
+                borderColor: "rgba(59,39,21,0.6)",
+                borderWidth: 1
             }
         ]
     }
@@ -58,17 +59,17 @@ const Chart:FunctionComponent<ICartParams> = ({time, price}) => {
                     wheel: {
                         enabled: true
                     },
-                    mode: "xy" as "xy",
+                    mode: "xy" as const,
                     speed: 100
                 },
                 pan: {
                     enabled: true,
-                    mode: "xy" as "xy",
+                    mode: "xy" as const,
                     speed: 100
                 }
             },
             tooltip: {
-                mode: 'index' as 'index',
+                mode: 'index' as const,
                 intersect: false,
                 backgroundColor: 'white',
                 titleColor: 'black',

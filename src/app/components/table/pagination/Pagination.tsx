@@ -1,4 +1,4 @@
-import React, {FunctionComponent, MouseEventHandler, useEffect, useState} from 'react';
+import React, {FunctionComponent, useEffect, useState} from 'react';
 import styles from "./Pagination.module.scss"
 import Button from "@/app/components/button/Button";
 import Service from "@/app/service/Service";

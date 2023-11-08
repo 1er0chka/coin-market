@@ -3,12 +3,13 @@ import styles from './Header.module.scss'
 import {Coin, Portfolio} from "@/app/service/Types";
 import Service from "@/app/service/Service";
 import PopularCoin from "@/app/components/header/popular-coin/PopularCoin";
-import {ModalPortfolioContext, ModalPortfolioProvider} from "@/app/provider/ModalPortfolioContext";
+import {ModalPortfolioContext} from "@/app/provider/ModalPortfolioContext";
 import {formatNumber} from "@/app/service/Formats";
+import Image from "next/image";
 
 const Header = () => {
     const [coins, setCoins] = useState<Coin[]>([])
-    const {isVisible, setVisible} = useContext(ModalPortfolioContext)
+    const {setVisible} = useContext(ModalPortfolioContext)
     const [portfolioSum, setPortfolioSum] = useState<number>(0);
     const [portfolioDif, setPortfolioDif] = useState<number>(0);
 
@@ -80,7 +81,9 @@ const Header = () => {
                             <div className={styles.difference}>0 (0%)</div>
                     }
                 </div>
-                <img src={"/resources/images/coin.png"}/>
+                <div className={styles.image}>
+                    <Image width={300} height={300} layout={"responsive"} src={"/resources/images/coin.png"} alt={'Portfolio'}/>
+                </div>
             </div>
         </div>
     );

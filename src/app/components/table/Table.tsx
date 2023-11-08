@@ -1,16 +1,15 @@
 'use client'
 import styles from "./Table.module.scss"
 import Service from "@/app/service/Service";
-import React, {FunctionComponent, useEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
 import {Coin} from "@/app/service/Types";
 import TableRow from "@/app/components/table/table-row/TableRow";
 import Loading from "@/app/components/loading/Loading";
 import Pagination from "@/app/components/table/pagination/Pagination";
 import Search from "@/app/components/table/search/Search";
 import TableHeader from "@/app/components/table/table-header/TableHeader";
-import Link from "next/link";
 
-const Table: FunctionComponent<{}> = () => {
+const Table = () => {
     const [objects, setObjects] = useState<Coin[]>([])
     const [loading, setLoading] = useState<boolean>(true)
     const [searchInfo, setSearchInfo] = useState<string>("")

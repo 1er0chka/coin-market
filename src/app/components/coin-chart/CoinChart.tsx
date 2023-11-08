@@ -15,8 +15,8 @@ const CoinChart: FunctionComponent<{ coinId: string }> = ({coinId}) => {
     useEffect(() => {
         const getHistory = async () => {
             Service.getHistoryById(coinId, interval).then((data) => {
-                let x: string[] = []
-                let y: number[] = []
+                const x: string[] = []
+                const y: number[] = []
                 switch (interval) {
                     case 'm1': {
                         data.map((time => {

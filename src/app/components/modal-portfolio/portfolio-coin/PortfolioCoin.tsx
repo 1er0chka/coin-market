@@ -4,6 +4,7 @@ import Button from "@/app/components/button/Button";
 import {Coin, Portfolio} from "@/app/service/Types";
 import Service from "@/app/service/Service";
 import {formatNumber} from "@/app/service/Formats";
+import Image from "next/image";
 
 const PortfolioCoin: FunctionComponent<{ coin: Portfolio }> = ({coin}) => {
     const [coinData, setCoinData] = useState<Coin | undefined>(undefined)
@@ -38,8 +39,10 @@ const PortfolioCoin: FunctionComponent<{ coin: Portfolio }> = ({coin}) => {
         <div className={styles.coinCard}>
             <div className={styles.coinInfo}>
                 <div className={styles.coinData}>
-                    <img className={styles.logo}
-                         src={'https://assets.coincap.io/assets/icons/' + 'btc' + '@2x.png'}/>
+                    <div className={styles.logo}>
+                        <Image alt={''} width={1} height={1} layout={"responsive"}
+                               src={'https://assets.coincap.io/assets/icons/' + coinData?.symbol.toLowerCase() + '@2x.png'}/>
+                    </div>
                     <div className={styles.name}>
                         {coinData?.name} ({coin.number})
                     </div>

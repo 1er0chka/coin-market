@@ -22,10 +22,5 @@
 .title {
   @include montserrat(1.5vw, 700);
   text-align: center;
-}
-
-.result {
-  @include montserrat(1vw, 700);
-  text-align: right;
-  margin-top: 1vw;
+  margin-bottom: 1vw;
 }
