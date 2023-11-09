@@ -2,44 +2,104 @@
 
 .content {
   margin: 3vw 10vw 3vw 10vw;
+
+  @media (max-width: 1440px) {
+    margin: 3vw 5vw 3vw 5vw;
+  }
+  @media (max-width: 1280px) {
+    margin: 3vw 0 3vw 2vw;
+  }
 }
 
 
 .info {
   display: flex;
+
+  @media (max-width: 768px) {
+    flex-direction: column-reverse;
+  }
 }
 
 .infoLeft {
   width: 54vw;
+
+  @media (max-width: 1440px) {
+    width: 72vw;
+  }
+  @media (max-width: 768px) {
+    width: 93vw;
+  }
 }
 
 .back {
-  @include montserrat(1vw, 500);
+  @include montserrat(1.1vw, 500);
   text-decoration: none;
   margin-left: 1vw;
+
+  @media (max-width: 1440px) {
+    @include montserrat(1.3vw, 500);
+  }
+  @media (max-width: 1280px) {
+    @include montserrat(1.5vw, 500);
+  }
+  @media (max-width: 1024px) {
+    @include montserrat(1.8vw, 500);
+  }
+  @media (max-width: 768px) {
+    @include montserrat(3vw, 500);
+  }
 }
 
 .infoRight {
   width: 20vw;
   margin-left: 5vw;
   margin-top: 1.7vw;
+
+  @media (max-width: 768px) {
+    width: 50vw;
+  }
 }
 
 .coinPrice {
   @include montserrat(2.5vw, 700);
   margin-bottom: 2vw;
+
+  @media (max-width: 1440px) {
+    @include montserrat(2.7vw, 700);
+  }
+  @media (max-width: 1280px) {
+    @include montserrat(2.7vw, 700);
+  }
+  @media (max-width: 1024px) {
+    @include montserrat(3vw, 700);
+  }
+  @media (max-width: 768px) {
+    @include montserrat(3.5vw, 700);
+  }
 }
 
 .error {
   @include montserrat(2vw, 500);
   margin-left: 1vw;
   margin-bottom: 1vw;
+
+  @media (max-width: 1440px) {
+    @include montserrat(2.3vw, 500);
+  }
+  @media (max-width: 1280px) {
+    @include montserrat(2.5vw, 500);
+  }
+  @media (max-width: 1024px) {
+    @include montserrat(2.8vw, 500);
+  }
+  @media (max-width: 768px) {
+    @include montserrat(5vw, 500);
+  }
 }
 
 .addButton {
   margin-top: 2vw;
-  height: 2vw;
-  @include montserrat(1vw, 700);
+  @include montserrat(1.1vw, 700);
   background-color: rgba(255, 255, 255, 0.4);
   border: 0.1vw solid rgba(59, 39, 21, 0.3);
   border-radius: 0.1vw;
@@ -55,5 +115,18 @@
     background-color: rgba(255, 255, 255, 0.2);
     color: rgba(59, 39, 21, 0.7);
     cursor: auto;
+  }
+
+  @media (max-width: 1440px) {
+    @include montserrat(1.3vw, 500);
+  }
+  @media (max-width: 1280px) {
+    @include montserrat(1.5vw, 500);
+  }
+  @media (max-width: 1024px) {
+    @include montserrat(1.8vw, 500);
+  }
+  @media (max-width: 768px) {
+    @include montserrat(3vw, 500);
   }
 }
