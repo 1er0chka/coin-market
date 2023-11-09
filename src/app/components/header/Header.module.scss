@@ -5,6 +5,18 @@
   padding: 1vw 0 1vw 0;
   display: flex;
   margin: 0 11vw 0 4vw;
+
+  @media (max-width: 1440px) {
+    margin: 0 4vw 0 1vw;
+  }
+  
+  @media (max-width: 1280px) {
+    margin: 0;
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column-reverse;
+  }
 }
 
 .popular {
@@ -15,11 +27,35 @@
   margin: 0 0 0 auto;
   display: flex;
   cursor: pointer;
+
+  @media (max-width: 768px) {
+    margin-bottom: 3vw;
+  }
 }
 
 .image {
   width: 3vw;
   height: 3vw;
+
+  @media (max-width: 1440px) {
+    width: 3.8vw;
+    height: 3.8vw;
+  }
+
+  @media (max-width: 1280px) {
+    width: 4.7vw;
+    height: 4.7vw;
+  }
+
+  @media (max-width: 1024px) {
+    width: 5vw;
+    height: 5vw;
+  }
+
+  @media (max-width: 768px) {
+    width: 9vw;
+    height: 9vw;
+  }
 }
 
 .portfolioPrice {
@@ -30,11 +66,42 @@
 .price {
   @include montserrat(1.2vw, 700);
   margin-top: 0.4vw;
+
+  @media (max-width: 1440px) {
+    @include montserrat(1.5vw, 700);
+  }
+
+  @media (max-width: 1280px) {
+    @include montserrat(1.8vw, 700);
+  }
+
+  @media (max-width: 1024px) {
+    @include montserrat(2vw, 700);
+  }
+
+  @media (max-width: 768px) {
+    @include montserrat(4.5vw, 700);
+  }
 }
 
 .difference {
   @include montserrat(0.8vw, 700);
 
+  @media (max-width: 1440px) {
+    @include montserrat(1vw, 700);
+  }
+
+  @media (max-width: 1280px) {
+    @include montserrat(1.2vw, 700);
+  }
+
+  @media (max-width: 1024px) {
+    @include montserrat(1.5vw, 700);
+  }
+
+  @media (max-width: 768px) {
+    @include montserrat(3vw, 700);
+  }
 }
 
 
