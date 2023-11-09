@@ -1,21 +1,33 @@
 @import "src/app/styles/fonts";
 
 .input {
-  max-height: 2vw;
   margin: 0 0 0 auto;
   display: flex;
 
   input {
-    @include montserrat(1vw, 500);
+    @include montserrat(1.1vw, 500);
     background-color: rgba(255, 255, 255, 0.4);
     padding: 0.2vw 1vw 0.2vw 1vw;
     border: none;
     border-radius: 0.1vw;
     width: 13vw;
 
+    @media (max-width: 1440px) {
+      @include montserrat(1.3vw, 500);
+    }
+    @media (max-width: 1280px) {
+      @include montserrat(1.5vw, 500);
+    }
+    @media (max-width: 1024px) {
+      @include montserrat(1.8vw, 500);
+    }
+    @media (max-width: 768px) {
+      @include montserrat(2.4vw, 500);
+    }
+
     &:active, &:focus, &:hover {
       border: none;
-      outline:none;
+      outline: none;
       background-color: rgba(255, 255, 255, 0.6);
       color: rgba(59, 39, 21, 0.7);
     }
@@ -32,5 +44,22 @@
   &:hover {
     background-color: rgba(59, 39, 21, 0.7);
     cursor: pointer;
+  }
+
+  @media (max-width: 1440px) {
+    width: 1.2vw;
+    height: 1.2vw;
+  }
+  @media (max-width: 1280px) {
+    width: 1.2vw;
+    height: 1.2vw;
+  }
+  @media (max-width: 1024px) {
+    width: 1.6vw;
+    height: 1.6vw;
+  }
+  @media (max-width: 768px) {
+    width: 2.4vw;
+    height: 2.4vw;
   }
 }

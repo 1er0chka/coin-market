@@ -15,22 +15,19 @@
   width: 1.3vw;
   height: 1.3vw;
   margin: 0 0.3vw 0 0;
-  
+
   @media (max-width: 1440px) {
     width: 1.5vw;
     height: 1.5vw;
   }
-
   @media (max-width: 1280px) {
     width: 1.8vw;
     height: 1.8vw;
   }
-
   @media (max-width: 1024px) {
     width: 2.2vw;
     height: 2.2vw;
   }
-
   @media (max-width: 768px) {
     width: 3.7vw;
     height: 3.7vw;
@@ -43,15 +40,12 @@
   @media (max-width: 1440px) {
     @include montserrat(1.4vw, 500);
   }
-
   @media (max-width: 1280px) {
     @include montserrat(1.5vw, 500);
   }
-
   @media (max-width: 1024px) {
     @include montserrat(1.9vw, 500);
   }
-
   @media (max-width: 768px) {
     @include montserrat(3.4vw, 500);
   }
@@ -65,11 +59,9 @@
   @media (max-width: 1440px) {
     @include montserrat(1vw, 500);
   }
-
   @media (max-width: 1024px) {
     @include montserrat(1.4vw, 500);
   }
-
   @media (max-width: 768px) {
     @include montserrat(2.2vw, 500);
   }
@@ -81,15 +73,12 @@
   @media (max-width: 1440px) {
     @include montserrat(1.3vw, 600);
   }
-
   @media (max-width: 1280px) {
     @include montserrat(1.5vw, 600);
   }
-
   @media (max-width: 1024px) {
     @include montserrat(1.8vw, 600);
   }
-
   @media (max-width: 768px) {
     @include montserrat(3vw, 600);
   }

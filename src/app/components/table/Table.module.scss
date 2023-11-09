@@ -2,6 +2,19 @@
 
 .title {
   @include montserrat(1.5vw, 700);
+
+  @media (max-width: 1440px) {
+    @include montserrat(1.8vw, 700);
+  }
+  @media (max-width: 1280px) {
+    @include montserrat(2vw, 700);
+  }
+  @media (max-width: 1024px) {
+    @include montserrat(2.3vw, 700);
+  }
+  @media (max-width: 768px) {
+    @include montserrat(3vw, 700);
+  }
 }
 
 .aboveTableArea {

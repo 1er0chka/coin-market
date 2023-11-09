@@ -9,11 +9,9 @@
   @media (max-width: 1440px) {
     margin: 0 4vw 0 1vw;
   }
-  
   @media (max-width: 1280px) {
     margin: 0;
   }
-
   @media (max-width: 768px) {
     flex-direction: column-reverse;
   }
@@ -41,17 +39,14 @@
     width: 3.8vw;
     height: 3.8vw;
   }
-
   @media (max-width: 1280px) {
     width: 4.7vw;
     height: 4.7vw;
   }
-
   @media (max-width: 1024px) {
     width: 5vw;
     height: 5vw;
   }
-
   @media (max-width: 768px) {
     width: 9vw;
     height: 9vw;
@@ -70,15 +65,12 @@
   @media (max-width: 1440px) {
     @include montserrat(1.5vw, 700);
   }
-
   @media (max-width: 1280px) {
     @include montserrat(1.8vw, 700);
   }
-
   @media (max-width: 1024px) {
     @include montserrat(2vw, 700);
   }
-
   @media (max-width: 768px) {
     @include montserrat(4.5vw, 700);
   }
@@ -90,15 +82,12 @@
   @media (max-width: 1440px) {
     @include montserrat(1vw, 700);
   }
-
   @media (max-width: 1280px) {
     @include montserrat(1.2vw, 700);
   }
-
   @media (max-width: 1024px) {
     @include montserrat(1.5vw, 700);
   }
-
   @media (max-width: 768px) {
     @include montserrat(3vw, 700);
   }

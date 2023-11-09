@@ -1,7 +1,7 @@
 @import "src/app/styles/fonts";
 
 .tableRow {
-  @include montserrat(1vw, 500);
+  @include montserrat(1.1vw, 500);
 
   &:nth-child(odd) td {
     background-color: rgba(255, 255, 255, 0.3);
@@ -15,25 +15,35 @@
     background-color: rgba(255, 255, 255, 0.6);
     cursor: pointer;
   }
+
+  @media (max-width: 1440px) {
+    @include montserrat(1.3vw, 500);
+  }
+  @media (max-width: 1280px) {
+    @include montserrat(1.5vw, 500);
+  }
+  @media (max-width: 1024px) {
+    @include montserrat(1.8vw, 500);
+  }
+  @media (max-width: 768px) {
+    @include montserrat(2.4vw, 500);
+  }
 }
 
 .tableRow td {
   text-align: right;
 
   &:first-child {
-    width: 2vw;
     text-align: center;
     padding: 0 0.3vw 0 0.3vw;
   }
 
   &:not(:first-child, :last-child) {
     padding: 0.8vw 1vw 0.8vw 1vw;
-    width: 12.5vw;
   }
 
   &:nth-child(2) {
     text-align: left;
-    width: 20vw;
   }
 }
 
@@ -43,15 +53,42 @@
 }
 
 .nameRow_logo {
-  width: 1.4vw;
-  height: 1.4vw;
+  width: 1.3vw;
+  height: 1.3vw;
   margin-right: 1vw;
+
+  @media (max-width: 1440px) {
+    width: 1.5vw;
+    height: 1.5vw;
+  }
+  @media (max-width: 1280px) {
+    width: 1.8vw;
+    height: 1.8vw;
+  }
+  @media (max-width: 1024px) {
+    width: 2.2vw;
+    height: 2.2vw;
+  }
+  @media (max-width: 768px) {
+    width: 3.7vw;
+    height: 3.7vw;
+  }
 }
 
 .nameRow_symbol {
   margin-left: 0.8vw;
-  @include montserrat(1vw, 600);
   color: rgba(59, 39, 21, 0.8);
+  @include montserrat(0.8vw, 600);
+
+  @media (max-width: 1440px) {
+    @include montserrat(1vw, 500);
+  }
+  @media (max-width: 1024px) {
+    @include montserrat(1.4vw, 500);
+  }
+  @media (max-width: 768px) {
+    @include montserrat(2.2vw, 500);
+  }
 }
 
 .negativeSum {
@@ -67,4 +104,14 @@
   height: 100%;
   text-align: center;
   margin: 0 auto 0 auto;
+
+  @media (max-width: 1440px) {
+    width: 1.8vw;
+  }
+  @media (max-width: 1024px) {
+    width: 2vw;
+  }
+  @media (max-width: 768px) {
+    width: 2.8vw;
+  }
 }

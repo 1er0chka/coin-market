@@ -4,4 +4,12 @@
 
 .content {
   margin: 1vw 10vw 3vw 10vw;
+  
+  @media (max-width: 1440px) {
+    margin: 3vw 5vw 3vw 5vw;
+  }
+  
+  @media (max-width: 1280px) {
+    margin: 3vw 0 3vw 0;
+  }
 }
