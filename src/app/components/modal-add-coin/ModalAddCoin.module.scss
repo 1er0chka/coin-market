@@ -31,16 +31,48 @@
 
 .coinName {
   @include montserrat(1.2vw, 700);
+
+  @media (max-width: 1440px) {
+    @include montserrat(1.3vw, 500);
+  }
+  @media (max-width: 1280px) {
+    @include montserrat(1.5vw, 500);
+  }
+  @media (max-width: 1024px) {
+    @include montserrat(1.8vw, 500);
+  }
+  @media (max-width: 768px) {
+    @include montserrat(3vw, 500);
+  }
 }
 
 .coinPrice {
   @include montserrat(1vw, 500);
+
+  @media (max-width: 1440px) {
+    @include montserrat(1.3vw, 500);
+  }
+  @media (max-width: 1280px) {
+    @include montserrat(1.5vw, 500);
+  }
+  @media (max-width: 1024px) {
+    @include montserrat(1.8vw, 500);
+  }
+  @media (max-width: 768px) {
+    @include montserrat(3vw, 500);
+  }
 }
 
 .input, .incorrectInput {
   margin: 0 0 0 auto;
   display: flex;
   border: none;
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
 
   input {
     @include montserrat(1vw, 500);
@@ -55,6 +87,20 @@
       background-color: rgba(255, 255, 255, 0.6);
       color: rgba(59, 39, 21, 0.7);
     }
+
+
+    @media (max-width: 1440px) {
+      @include montserrat(1.3vw, 500);
+    }
+    @media (max-width: 1280px) {
+      @include montserrat(1.5vw, 500);
+    }
+    @media (max-width: 1024px) {
+      @include montserrat(1.8vw, 500);
+    }
+    @media (max-width: 768px) {
+      @include montserrat(3vw, 500);
+    }
   }
 }
 
@@ -65,6 +111,19 @@
 .amount {
   @include montserrat(1vw, 700);
   text-align: right;
+
+  @media (max-width: 1440px) {
+    @include montserrat(1.3vw, 500);
+  }
+  @media (max-width: 1280px) {
+    @include montserrat(1.5vw, 500);
+  }
+  @media (max-width: 1024px) {
+    @include montserrat(1.8vw, 500);
+  }
+  @media (max-width: 768px) {
+    @include montserrat(3vw, 500);
+  }
 }
 
 .buttons {
