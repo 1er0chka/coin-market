@@ -6,6 +6,12 @@
   color: wheat;
   background-color: rgba(59, 39, 21, 0.7);
 
+  tr th:last-child {
+    @media (max-width: 768px) {
+      visibility: hidden;
+    }
+  }
+
   @media (max-width: 1440px) {
     @include montserrat(1.3vw, 500);
     color: wheat;

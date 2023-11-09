@@ -1,7 +1,7 @@
 @import "src/app/styles/fonts";
 
 .button {
-  @include montserrat(1vw, 500);
+  @include montserrat(1.1vw, 500);
   background-color: rgba(255, 255, 255, 0.4);
   border: none;
   border-radius: 0.1vw;
@@ -16,5 +16,18 @@
     background-color: rgba(255, 255, 255, 0.2);
     color: rgba(59, 39, 21, 0.7);
     cursor: auto;
+  }
+
+  @media (max-width: 1440px) {
+    @include montserrat(1.3vw, 500);
+  }
+  @media (max-width: 1280px) {
+    @include montserrat(1.5vw, 500);
+  }
+  @media (max-width: 1024px) {
+    @include montserrat(1.8vw, 500);
+  }
+  @media (max-width: 768px) {
+    @include montserrat(2.4vw, 500);
   }
 }
