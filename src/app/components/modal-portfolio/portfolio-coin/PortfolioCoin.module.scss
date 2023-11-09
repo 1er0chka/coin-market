@@ -19,17 +19,61 @@
 
 .logo {
   margin-right: 0.3vw;
-  width: 1.5vw;
+  width: 1.3vw;
+  height: 1.3vw;
+
+  @media (max-width: 1440px) {
+    width: 1.5vw;
+    height: 1.5vw;
+  }
+  @media (max-width: 1280px) {
+    width: 1.8vw;
+    height: 1.8vw;
+  }
+  @media (max-width: 1024px) {
+    width: 2.2vw;
+    height: 2.2vw;
+  }
+  @media (max-width: 768px) {
+    width: 3.7vw;
+    height: 3.7vw;
+  }
 }
 
 .name {
-  @include montserrat(1.2vw, 500);
+  @include montserrat(1.1vw, 500);
+
+  @media (max-width: 1440px) {
+    @include montserrat(1.3vw, 500);
+  }
+  @media (max-width: 1280px) {
+    @include montserrat(1.5vw, 500);
+  }
+  @media (max-width: 1024px) {
+    @include montserrat(1.8vw, 500);
+  }
+  @media (max-width: 768px) {
+    @include montserrat(2.4vw, 500);
+  }
 }
 
 .prices {
   display: flex;
-  @include montserrat(1vw, 500);
+  @include montserrat(1.1vw, 500);
   margin-top: 0.2vw;
+
+  @media (max-width: 1440px) {
+    @include montserrat(1.3vw, 500);
+  }
+  @media (max-width: 1280px) {
+    @include montserrat(1.5vw, 500);
+  }
+  @media (max-width: 1024px) {
+    @include montserrat(1.8vw, 500);
+  }
+  @media (max-width: 768px) {
+    @include montserrat(2.4vw, 500);
+  }
 }
 
 .difference {
