@@ -1,8 +1,8 @@
 @mixin montserrat($size, $weight) {
-  color: #3B2715;
+  color: #3b2715;
   font: {
-    family: 'Montserrat', sans-serif;
+    family: "Montserrat", sans-serif;
     size: $size;
     weight: $weight;
-  };
+  }
 }

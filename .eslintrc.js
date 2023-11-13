@@ -4,6 +4,7 @@ module.exports = {
         'plugin:react/recommended',
         'plugin:@typescript-eslint/recommended', // Для правил линтинга TypeScript
         'next/core-web-vitals', // Для правил Next.js
+        "prettier"
     ],
     "env": {
         "browser": true,
@@ -37,8 +38,7 @@ module.exports = {
         "react",
         '@typescript-eslint', // Добавляем плагин для TypeScript
     ],
-    "rules": {
-    },
+    "rules": {},
     "settings": {
         "react": {
             "version": 'detect', // Автоматически определяет версию React для правил линтинга

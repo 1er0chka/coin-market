@@ -25,7 +25,9 @@
       @include montserrat(2.4vw, 500);
     }
 
-    &:active, &:focus, &:hover {
+    &:active,
+    &:focus,
+    &:hover {
       border: none;
       outline: none;
       background-color: rgba(255, 255, 255, 0.6);

@@ -9,7 +9,6 @@
 .coinRank {
   @include montserrat(2vw, 500);
 
-
   @media (max-width: 1440px) {
     @include montserrat(2.3vw, 500);
   }

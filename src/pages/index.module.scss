@@ -1,15 +1,45 @@
+@import "src/app/styles/fonts";
+
 .main {
   margin: 0 3vw 0 3vw;
 }
 
 .content {
   margin: 1vw 10vw 3vw 10vw;
-  
+
   @media (max-width: 1440px) {
     margin: 3vw 5vw 3vw 5vw;
   }
-  
+
   @media (max-width: 1280px) {
     margin: 3vw 0 3vw 0;
+  }
+}
+
+.aboveTableArea {
+  display: flex;
+  width: 100%;
+  height: 4vw;
+  align-items: center;
+
+  @media (max-width: 768px) {
+    margin-bottom: 1.4vw;
+  }
+}
+
+.title {
+  @include montserrat(1.5vw, 700);
+
+  @media (max-width: 1440px) {
+    @include montserrat(1.8vw, 700);
+  }
+  @media (max-width: 1280px) {
+    @include montserrat(2vw, 700);
+  }
+  @media (max-width: 1024px) {
+    @include montserrat(2.3vw, 700);
+  }
+  @media (max-width: 768px) {
+    @include montserrat(3vw, 700);
   }
 }
