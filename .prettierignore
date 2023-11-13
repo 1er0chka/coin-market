@@ -1,0 +1,9 @@
+# Ignore artifacts:
+build
+coverage
+tailwind.config.ts
+.eslintrc.js
+next.config.js
+postcss.config.js
+README.md
+tsconfig.json
