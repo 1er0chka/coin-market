@@ -7,36 +7,10 @@
 }
 
 .primaryInfo {
-  @include montserrat(1.1vw, 700);
-
-  @media (max-width: 1440px) {
-    @include montserrat(1.3vw, 500);
-  }
-  @media (max-width: 1280px) {
-    @include montserrat(1.5vw, 500);
-  }
-  @media (max-width: 1024px) {
-    @include montserrat(1.8vw, 500);
-  }
-  @media (max-width: 768px) {
-    @include montserrat(3vw, 500);
-  }
+  @include text(700);
 }
 
 .secondaryInfo {
-  @include montserrat(1.1vw, 600);
+  @include text(600);
   margin: 0 0 0 auto;
-
-  @media (max-width: 1440px) {
-    @include montserrat(1.3vw, 500);
-  }
-  @media (max-width: 1280px) {
-    @include montserrat(1.5vw, 500);
-  }
-  @media (max-width: 1024px) {
-    @include montserrat(1.8vw, 500);
-  }
-  @media (max-width: 768px) {
-    @include montserrat(3vw, 500);
-  }
 }

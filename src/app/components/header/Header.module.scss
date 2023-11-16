@@ -31,6 +31,8 @@
   }
 }
 
+// TODO media
+
 .image {
   width: 3vw;
   height: 3vw;
@@ -59,36 +61,10 @@
 }
 
 .price {
-  @include montserrat(1.2vw, 700);
+  @include text(700);
   margin-top: 0.4vw;
-
-  @media (max-width: 1440px) {
-    @include montserrat(1.5vw, 700);
-  }
-  @media (max-width: 1280px) {
-    @include montserrat(1.8vw, 700);
-  }
-  @media (max-width: 1024px) {
-    @include montserrat(2vw, 700);
-  }
-  @media (max-width: 768px) {
-    @include montserrat(4.5vw, 700);
-  }
 }
 
 .difference {
-  @include montserrat(0.8vw, 700);
-
-  @media (max-width: 1440px) {
-    @include montserrat(1vw, 700);
-  }
-  @media (max-width: 1280px) {
-    @include montserrat(1.2vw, 700);
-  }
-  @media (max-width: 1024px) {
-    @include montserrat(1.5vw, 700);
-  }
-  @media (max-width: 768px) {
-    @include montserrat(3vw, 700);
-  }
+  @include textSmall(700);
 }

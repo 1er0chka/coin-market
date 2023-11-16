@@ -17,6 +17,8 @@
   align-items: center;
 }
 
+// TODO: image
+
 .logo {
   margin-right: 0.3vw;
   width: 1.3vw;
@@ -41,39 +43,13 @@
 }
 
 .name {
-  @include montserrat(1.1vw, 500);
-
-  @media (max-width: 1440px) {
-    @include montserrat(1.3vw, 500);
-  }
-  @media (max-width: 1280px) {
-    @include montserrat(1.5vw, 500);
-  }
-  @media (max-width: 1024px) {
-    @include montserrat(1.8vw, 500);
-  }
-  @media (max-width: 768px) {
-    @include montserrat(3vw, 500);
-  }
+  @include text(500);
 }
 
 .prices {
+  @include text(500);
   display: flex;
-  @include montserrat(1.1vw, 500);
   margin-top: 0.2vw;
-
-  @media (max-width: 1440px) {
-    @include montserrat(1.3vw, 500);
-  }
-  @media (max-width: 1280px) {
-    @include montserrat(1.5vw, 500);
-  }
-  @media (max-width: 1024px) {
-    @include montserrat(1.8vw, 500);
-  }
-  @media (max-width: 768px) {
-    @include montserrat(2.8vw, 500);
-  }
 }
 
 .difference {

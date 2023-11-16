@@ -9,20 +9,7 @@
 }
 
 .pagination div {
-  @include montserrat(1.1vw, 500);
+  @include text(500);
   color: #3b2715;
   margin: 0 0.6vw 0 0.6vw;
-
-  @media (max-width: 1440px) {
-    @include montserrat(1.3vw, 500);
-  }
-  @media (max-width: 1280px) {
-    @include montserrat(1.5vw, 500);
-  }
-  @media (max-width: 1024px) {
-    @include montserrat(1.8vw, 500);
-  }
-  @media (max-width: 768px) {
-    @include montserrat(2.4vw, 500);
-  }
 }

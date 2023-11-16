@@ -20,20 +20,7 @@
 }
 
 .title {
-  @include montserrat(1.5vw, 700);
+  @include title(500);
   text-align: center;
   margin-bottom: 1vw;
-
-  @media (max-width: 1440px) {
-    @include montserrat(1.7vw, 500);
-  }
-  @media (max-width: 1280px) {
-    @include montserrat(1.9vw, 500);
-  }
-  @media (max-width: 1024px) {
-    @include montserrat(2vw, 500);
-  }
-  @media (max-width: 768px) {
-    @include montserrat(3.4vw, 500);
-  }
 }

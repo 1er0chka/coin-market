@@ -1,8 +1,62 @@
-@mixin montserrat($size, $weight) {
+@mixin title($weight) {
   color: #3b2715;
   font: {
     family: "Montserrat", sans-serif;
-    size: $size;
+    size: 2vw;
     weight: $weight;
+  }
+
+  @media (max-width: 1440px) {
+    font-size: 2.3vw;
+  }
+  @media (max-width: 1280px) {
+    font-size: 2.5vw;
+  }
+  @media (max-width: 1024px) {
+    font-size: 2.8vw;
+  }
+  @media (max-width: 768px) {
+    font-size: 4vw;
+  }
+}
+
+@mixin text($weight) {
+  color: #3b2715;
+  font: {
+    family: "Montserrat", sans-serif;
+    size: 1.1vw;
+    weight: $weight;
+  }
+
+  @media (max-width: 1440px) {
+    font-size: 1.3vw;
+  }
+  @media (max-width: 1280px) {
+    font-size: 1.5vw;
+  }
+  @media (max-width: 1024px) {
+    font-size: 1.8vw;
+  }
+  @media (max-width: 768px) {
+    font-size: 2.4vw;
+  }
+}
+
+@mixin textSmall($weight) {
+  color: #3b2715;
+  font: {
+    family: "Montserrat", sans-serif;
+    size: 0.8vw;
+    weight: $weight;
+  }
+
+  @media (max-width: 1440px) {
+    font-size: 1vw;
+  }
+  @media (max-width: 1024px) {
+    font-size: 1.4vw;
+  }
+  @media (max-width: 768px) {
+    font-size: 2.2vw;
   }
 }

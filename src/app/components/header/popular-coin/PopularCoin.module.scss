@@ -11,6 +11,8 @@
   margin-left: 1vw;
 }
 
+// TODO image
+
 .coinImage {
   width: 1.3vw;
   height: 1.3vw;
@@ -34,7 +36,11 @@
   }
 }
 
+// TODO: font
+
 .coinName {
+  @include text(500);
+  /*
   @include montserrat(1.2vw, 500);
 
   @media (max-width: 1440px) {
@@ -49,37 +55,16 @@
   @media (max-width: 768px) {
     @include montserrat(3.4vw, 500);
   }
+
+   */
 }
 
 .coinSymbol {
-  @include montserrat(0.8vw, 600);
+  @include textSmall(600);
   color: rgba(59, 39, 21, 0.8);
   margin-left: 0.2vw;
-
-  @media (max-width: 1440px) {
-    @include montserrat(1vw, 500);
-  }
-  @media (max-width: 1024px) {
-    @include montserrat(1.4vw, 500);
-  }
-  @media (max-width: 768px) {
-    @include montserrat(2.2vw, 500);
-  }
 }
 
 .coinPrice {
-  @include montserrat(1.1vw, 600);
-
-  @media (max-width: 1440px) {
-    @include montserrat(1.3vw, 600);
-  }
-  @media (max-width: 1280px) {
-    @include montserrat(1.5vw, 600);
-  }
-  @media (max-width: 1024px) {
-    @include montserrat(1.8vw, 600);
-  }
-  @media (max-width: 768px) {
-    @include montserrat(3vw, 600);
-  }
+  @include text(600);
 }
